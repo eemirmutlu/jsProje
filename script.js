@@ -110,6 +110,19 @@ const katanaListesi = [
 ];
 
 
+// Fonksiyon: Ürünü yerel depolama alanına ekleme
+function addToCart(katana) {
+  let cart = localStorage.getItem('cart');
+  cart = cart ? JSON.parse(cart) : [];
+
+  // Ürünü sepete ekleme
+  cart.push(katana);
+
+  // Güncellenmiş sepeti yerel depolama alanına kaydetme
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const row = document.querySelector("#row");
 
@@ -156,6 +169,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // Buraya eklenecek olan sepete ekleme işlemi kodları gelecek
       // Örnek olarak:
       // addToCart(katana); // addToCart fonksiyonu ile sepete ekleme işlemi yapılabilir
+
+      addToCart(katana);
     });
 
     cardText.appendChild(addToCartButton);
@@ -171,3 +186,6 @@ document.addEventListener("DOMContentLoaded", function () {
     row.appendChild(col);
   });
 });
+
+localStorage.clear()
+
