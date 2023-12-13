@@ -122,3 +122,4 @@ odemeYapButton.addEventListener('click', function () {
     // Ödeme işlemleri burada yapılabilir
     alert(`Toplam ödenecek miktar: ${totalPrice}$`);
 });
+// localStorage.clear()
