@@ -1,95 +1,124 @@
-const h1 = document.getElementById("h1")
+document.addEventListener("DOMContentLoaded", function () {
+    const cartElement = document.querySelector('#sepetListesi');
 
-const container = document.querySelector(".container")
+    // Local storage'dan sepet verilerini alma
+    const productsInCart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    // Fonksiyon: Ürün kartlarını oluştur
+    function createProductCard(product) {
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item', 'bg-danger', 'text-white', 'fw-bold', 'rounded-2', 'p-3', 'text-center', 'mb-3'); // Stilleri ayarla
 
-// sepet.forEach( urun => {
-//     const h1 = document.createElement('h1')
-//     h1.textContent = `Sepetinizde ${urun.title} adlı ürün bulundu.`
+        // Ürün resmi
+        const productImage = document.createElement('img');
+        productImage.src = product.img; // Ürün resmi
+        productImage.alt = product.katana_isim; // Resim alt etiketi
+        productImage.style.width = '100%'; // Resmin boyutunu ayarla
+        productImage.style.maxHeight = '100%'; // Resmin maksimum yüksekliği
+        productImage.classList.add('mb-3'); // Boşluk ekleyerek düzeni düzelt
 
-//     container.append(h1)
+        const productName = document.createElement('h3');
+        productName.textContent = product.katana_isim; // Ürün ismi
 
-// })
+        const productPrice = document.createElement('p');
+        productPrice.textContent = `Fiyat: ${product.fiyat}$`; // Ürün fiyatı
 
-if (sepetLocal !== null) {
-    sepet = JSON.parse(sepetLocal);
-    katanaListesi.forEach(katana => {
-        const col = document.createElement('div');
-        col.className = 'col-lg-4 col-md-6 col-sm-12 mt-5';
+        const productLength = document.createElement('p');
+        productLength.textContent = `Uzunluk: ${product.uzunluk_cm} cm`; // Ürün uzunluğu
 
-        const card = document.createElement('div');
-        card.className = 'card align-items-center bg-danger';
-        card.style.width = '100%';
-        card.style.height = "100%"
+        // Oluşturulan içerikleri kart elementine ekleme
+        cartItem.appendChild(productImage);
+        cartItem.appendChild(productName);
+        cartItem.appendChild(productPrice);
+        cartItem.appendChild(productLength);
 
-        const img = document.createElement('img');
-        img.src = katana.img;
-        img.className = 'card-img-top';
-        img.alt = 'Katana';
-
-        const cardBody = document.createElement('div');
-        cardBody.className = 'card-body';
-
-        const cardTitle = document.createElement('h5');
-        cardTitle.className = 'card-title fw-bold text-white';
-        cardTitle.textContent = katana.katana_isim;
-
-        const cardText = document.createElement('p');
-        cardText.className = 'card-text fw-bold';
-
-        const priceLine = document.createElement('span');
-        priceLine.textContent = `Fiyat: ${katana.fiyat}$`;
-
-        const breakLine = document.createElement('br');
-
-        const lengthLine = document.createElement('span');
-        lengthLine.textContent = `Uzunluk: ${katana.uzunluk_cm} cm`;
-
-        cardText.appendChild(priceLine);
-        cardText.appendChild(breakLine);
-        cardText.appendChild(lengthLine);
-
-        const addToCartButton = document.createElement('button');
-        addToCartButton.textContent = 'Sepete Ekle';
-        addToCartButton.className = 'btn btn-dark text-danger fw-bold d-block';
-        addToCartButton.addEventListener('click', () => {
-            // Buraya eklenecek olan sepete ekleme işlemi kodları gelecek
-            // Örnek olarak:
-            // addToCart(katana); // addToCart fonksiyonu ile sepete ekleme işlemi yapılabilir
-
-            addToCart(katana);
-        });
-
-        cardText.appendChild(addToCartButton);
-
-
-        cardBody.appendChild(cardTitle);
-        cardBody.appendChild(cardText);
-
-        card.appendChild(img);
-        card.appendChild(cardBody);
-
-        col.appendChild(card);
-        row.appendChild(col);
+        return cartItem;
     }
 
-            // HTML üzerinden görsel olarak da kaldırıyoruz
-            this.parentElement.remove();
-};
+    // Sepette ürün varsa
+    if (productsInCart.length > 0) {
+        productsInCart.forEach(product => {
+            const productCard = createProductCard(product);
+            cartElement.appendChild(productCard);
+        });
+    } else {
+        // Sepette ürün yoksa, kullanıcıya bilgi verilebilir
+        const emptyCartMessage = document.createElement('p');
+        emptyCartMessage.textContent = 'Sepetinizde ürün bulunmamaktadır.';
+        cartElement.appendChild(emptyCartMessage);
+    }
 
+    // Ekran boyutlarına göre düzenleme yap
+    function adjustLayout() {
+        const windowWidth = window.innerWidth;
 
-imgDiv.appendChild(img)
+        // Kartları temizle
+        cartElement.innerHTML = '';
 
-div.appendChild(imgDiv)
-div.appendChild(title)
-div.appendChild(price)
-div.appendChild(button)
+        if (windowWidth >= 992) {
+            // Büyük ekranlar (Desktop)
+            const rowDiv = document.createElement('div');
+            rowDiv.classList.add('row', 'row-cols-3');
 
-container.appendChild(div)
+            productsInCart.forEach(product => {
+                const productCard = createProductCard(product);
+                const colDiv = document.createElement('div');
+                colDiv.classList.add('col');
+                colDiv.appendChild(productCard);
+                rowDiv.appendChild(colDiv);
+            });
 
-    })
-} else {
-    const h4 = document.createElement("h1")
-    h4.innerHTML = "Seçim yapmadınız.";
-    container.appendChild(h4)
+            cartElement.appendChild(rowDiv);
+        } else if (windowWidth >= 576) {
+            // Orta büyüklükte ekranlar (Tablet)
+            const rowDiv = document.createElement('div');
+            rowDiv.classList.add('row', 'row-cols-2');
+
+            productsInCart.forEach(product => {
+                const productCard = createProductCard(product);
+                const colDiv = document.createElement('div');
+                colDiv.classList.add('col');
+                colDiv.appendChild(productCard);
+                rowDiv.appendChild(colDiv);
+            });
+
+            cartElement.appendChild(rowDiv);
+        } else {
+            // Küçük ekranlar (Mobil)
+            productsInCart.forEach(product => {
+                const productCard = createProductCard(product);
+                cartElement.appendChild(productCard);
+            });
+        }
+    }
+
+    // Sayfa yüklendiğinde ve ekran boyutu değiştiğinde düzeni ayarla
+    adjustLayout();
+    window.addEventListener('resize', adjustLayout);
+});
+
+function calculateTotalPrice() {
+    const productsInCart = JSON.parse(localStorage.getItem('cart')) || [];
+    let totalPrice = 0;
+
+    productsInCart.forEach(product => {
+        totalPrice += product.fiyat;
+    });
+
+    return totalPrice;
 }
+
+// Toplam fiyatı ekrana yazdır
+function displayTotalPrice() {
+    const totalPrice = calculateTotalPrice();
+    totalPriceElement.textContent = `Toplam Fiyat: ${totalPrice}$`;
+}
+
+displayTotalPrice(); // Sayfa yüklendiğinde toplam fiyatı göster
+
+// Ödeme yap butonuna tıklama işlemi
+odemeYapButton.addEventListener('click', function () {
+    const totalPrice = calculateTotalPrice();
+    // Ödeme işlemleri burada yapılabilir
+    alert(`Toplam ödenecek miktar: ${totalPrice}$`);
+});

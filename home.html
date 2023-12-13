@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarihçe</title>
+    <link rel="shortcut icon" href="images/stylesheet2.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Noto+Serif+SC:wght@500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        nav {
+            width: 100%;
+            height: 150px;
+            background-color: red;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(248, 143, 143);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            color: white;
+            gap: 100px;
+            padding: 100px;
+            text-align: center;
+        }
+
+        main div {
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+            border-radius: 25px;
+            padding: 20px;
+            font-family: 'Lato', sans-serif;
+            transition: all .5s linear;
+            box-shadow: 10px 10px 10px black;
+            color: black;
+        }
+
+        main div p {
+            opacity: .8;
+            transition: all .3s linear;
+        }
+
+        main div:hover {
+            transform: scale(1.01);
+            color: black;
+            font-family: 'Lato', sans-serif;
+            cursor: default;
+        }
+
+        main div:hover p {
+            opacity: 1;
+        }
+
+        /* .button {
+            padding-bottom: 50px;
+            background-color: rgb(248, 3, 3);
+        } */
+
+        button {
+            width: 200px;
+            height: 50px;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 25px;
+            border: 1px solid black;
+            cursor: pointer;
+            color: black;
+            box-shadow: 5px 5px 5px black;
+            background-color: red;
+        }
+
+        footer {
+            width: 100%;
+            height: 450px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* Dikeyde ortalama */
+            padding: 20px;
+            font-family: 'Kdam Thmor Pro', sans-serif;
+        }
+
+        footer div {
+            width: 50%;
+            /* Ya da istediğiniz genişlik değeri */
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            /* Yatayda ortalama */
+            align-items: center;
+            /* Dikeyde ortalama */
+        }
+
+        .logos {
+            text-decoration: none;
+            color: white;
+            font-size: 50px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: space-around;
+        }
+
+        footer hr {
+            border: 3px solid white;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        @media screen and (max-width: 820px) {
+            main {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+            main {
+                margin: 0;
+                padding: 10px;
+                gap: 50px;
+                padding-bottom: 50px;
+                padding-top: 50px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <h1>Katana'nın Tarihçesi (刀の歴史)</h1>
+    </nav>
+
+    <main>
+        <div>
+            <h1 style="color: red;">Katana'nın Tarihi</h1>
+            <p> Katana (刀 veya かたな), kavisli, tek ağızlı, iki elle tutulabilecek kadar uzun saplı bir Japon
+                kılıcı. Japon samurayı tarafından kullanılan, geleneksel tek-yönlü, kıvrık kılıç çeşididir.
+                Vakizaşi veya şoto ile ya da tanto ile eş olarak bilinen[kaynak belirtilmeli] katana, buşi sınıfı
+                savaşçılar olan bukeler tarafından kullanılırdı. İki silah beraber olduğunda büyük-küçük anlamına gelen
+                dayişo olarak adlandırılır ve samurayların kişisel onur ve sosyal gücünü temsil ederdi. Uzun kılıç açık
+                alanda yapılan dövüşlerde kullanılırken kısa kılıç yan silah olarak taşınır ve saplama amacıyla ya da
+                yakın dövüşlerde ve seppuku için kullanılırdı.
+
+                Japonya'da katana için kullanılan resmi terim uchigatana (打刀) olup, katana (刀) terimi genellikle
+                dünyadaki tüm tek ağızlı kılıçları ifade eder.
+
+                Kın (鞘 saya) ve balçak yani el siperi kısımları (鍔 suba), özellikle Edo döneminin son yıllarında özel
+                olarak tasarlanan sanat eserleriydi ve karmaşık bir dizayna sahipti.
+
+                Asıl olarak kesmek için kullanılmasına rağmen hafif eğriliği sayesinde etkili bir saplama silahı olarak
+                da kullanılabilir. Çift elle tutulacak şekilde tasarlanmış olsa da bazı eski Japon dövüş teknikleri en
+                azından bir ya da iki tek-el tekniği içerir.
+
+                Kılıcın, samurayın ruhu olduğu düşünülür. Diğer silahlar zamanla popülerliğini yitirirken kılıç yerini
+                korumuştur. Japonlar kılıca olağanüstü değer verirlerdi. Birçok Japon tarihçisine göre Edo döneminde
+                sadece samurayların kılıç taşımasına izin verilirdi. Öyle ki, kılıç taşımak bile bir köylüyü öldürmek
+                için yeterli bir sebep teşkil ediyordu.Hatta intikam peşinde koşan köylülerin her öldürdüğü asker için
+                kılıcına bir inci takılırdı. Paraya ihtiyacı olan efendisiz kalmış samurayın (Ronin) kılıcını satması
+                Japon toplumundaki onursuz durumunu daha da kötüleştirirdi. Bunu yapanlar samurayın gözünde "ruhsuz"
+                olurdu.
+
+                Eski Japon kültürünün çoğu, kılıçlar etrafında dönüyordu. Özenle belirlenen kılıç taşıma, temizleme,
+                muhafaza etme, keskinleştirme (ya da keskinleştirmeme) ve tutma metodları dönemden döneme gelişmiştir.
+
+                Örneğin; bir başkasının evine giren bir samuray, diz çöktüğünde kılıcını nasıl yerleştirmesi gerektiğini
+                bilmelidir. Kılıcı kolay çekebilecek şekilde yerleştirmek şüphe ya da saldırı hissi uyandırabilir; bu
+                sebeple, kılıcın sağda ya da solda olması ve uzağa ya da bir kişiye doğru tutulmuş olması etik açıdan
+                önemli bir noktadır. Ev sahibinin uzun kılıcı, katana-kake adı verilen bir rafta vakizaşinin üzerine
+                yukarı doğru bükülmüş şekilde konur; omote (suka ya da kabzanın solu göstermesi) geleneklere göre bir
+                uyarıdır. Diğer taraftan, taçi, kuşanıldığı gibi bir duruşa sahiptir, suka tabandaki bir oluğa
+                yerleştirilmiştir ve yukarıyı göstermekte olan saya, keskin kısım aşağıda olacak şekilde bir girintiye
+                yerleştirilmiştir.
+
+                Çoğu samuray, kılıcını öncelikli silah olarak kullanmaz; önce yay, sonra mızrak, son olarak da kılıç
+                kullanılır. Kılıç çekmek, son hadde gelindiğinde ruhun serbestçe alev almasına izin vermek gibidir.
+                Teslim olmaktan başka çare kalmayana dek savaşmak olarak açıklanan "Ken ore, ya mo suki" (tam çevirisi :
+                kılıcı kırılmış ve oku da yok) bir deyim olarak kullanılır.
+
+            </p>
+        </div>
+        <div>
+            <h1 style="color: red;">扇子的历史</h1>
+            <p style="font-family: 'Noto Serif SC', serif;">几个世纪以来，中国一直生活在一种对外来社会封闭的文化中。然而
+                刀（刀またはかたな）は、両手で持つのに十分な長さのハンドルを備えた、湾曲した片刃の日本の武器です。
+                剣日本の武士が使用する伝統的な片面湾曲刀。
+                刀、武士のクラス、脇差、松刀、短刀と同義で知られる[要出典]
+                武士、武家が使用しました。 2つの武器が一緒になるということは、大きいことと小さいことを意味します。
+                それは大将と呼ばれ、武士の個人的な名誉と社会的権力を表していました。長剣を開いた状態
+                野戦で使用される場合、短剣は副武器として携帯され、突き刺したり刺したりする目的で使用されます。
+                接近戦や切腹に使用された。
+
+                日本での刀の正式な用語は打刀ですが、通常は刀という用語が使われます。
+                世界中にある全ての片刃の剣を指します。
+
+                鍔の鞘や鍔捺の部分は幕末期に特別にデザインされたものです。
+                それらは芸術作品であり、複雑なデザインをしていました。
+
+                主に切断に使用されますが、わずかに湾曲しているため、効果的な刺し武器としても使用できます。
+                も使用できます。両手で持つように設計されていますが、日本古来の格闘技の中には、
+                少なくとも 1 つまたは 2 つの片手テクニックが含まれています。
+
+                刀は武士の魂であると考えられています。他の武器が時間の経過とともに人気を失う一方で、剣は次のようなものに置き換えられました。
+                保護されました。日本人は剣に並外れた価値を置きました。多くの日本の歴史家によると、江戸時代には
+                刀を持つことを許されたのは武士だけでした。剣を持つことさえ村人を殺すことを意味するほどです。
+                実際、復讐を求める村人たちによって殺された兵士が一人増えるごとに、
+                彼の剣には真珠が付いていました。お金に困った浪人が刀を売る
+                それは日本社会における彼の不名誉な地位をさらに悪化させることになるだろう。このようなことをする者は、武士の目には「魂のない者」とみなされます。
+                だろう。
+
+                古代日本文化の多くは刀を中心に展開していました。慎重に決めた刀運び、掃除、
+                保存、研ぎ（または研ぎすぎ）、保管の方法は時々進化してきました。
+
+                例えば;他人の家に入る武士は、ひざまずくときに刀を置く方法を知っています。
+                知っておくべきだ。抜きやすいように剣を置くと、疑いを持たれたり、攻撃されたりする可能性があります。これ
+                したがって、剣が右であろうと左であろうと、人に向けられたり、人に向けられたりすることは倫理的に容認できません。
+                重要な点です。主人の長い刀は「刀掛」と呼ばれ、棚の脇差の上に置かれます。
+                上向きに曲げて配置されます。オモテ（左を向いた柄）は、伝統によれば、
+                警告です。一方、太刀は履いたままの姿勢があり、スカは根元に溝が付いています。
+                を置き、上向きの上部を鋭利な部分を下にして凹部に置きます。
+                が置かれている。
+
+                ほとんどの武士は剣を主な武器として使用しません。最初に弓、次に槍、そして最後に剣です。
+                使用されている。剣を抜くということは、極限まで魂を自由に燃やすようなものである。
+                「けんおれ、やもすき」（直訳：「降伏せざるを得なくなるまで戦え」）。
+                彼の剣は壊れ、彼の矢は欠けている）は慣用句として使用されます。
+
+
+            </p>
+        </div>
+
+
+        <a href="index.html"><button>Ana Sayfa</button></a>
+        <a href="sepet.html"><button>Sepet</button></a>
+
+
+    </main>
+
+    <footer>
+        <div class="logos">
+
+            <a href="https://www.instagram.com/eemirmutlu/" target="_blank">
+                <i style="color: white;" class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://github.com/eemirmutlu" target="_blank">
+                <i style="color: white;" class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/emir-mutlu-27428a255/" target="_blank">
+                <i style="color: white;" class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="">
+                <i style="color: white;" class="fa-brands fa-x-twitter"></i>
+            </a>
+
+        </div>
+        <hr>
+        <div>
+            <h5>Copyright &copy; 2021 by Emir Mutlu</h5>
+        </div>
+
+    </footer>
+    <script src="https://kit.fontawesome.com/4e739239cd.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
